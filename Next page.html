@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="utf-8">
+	<title>Check out</title>
+   <link rel="icon" type="image/x-icon" href="C:\Users\Marcus\Documents\Grandeur images\Shopping Cart Black_25px.png">
+	<style type="text/css">
+	 html{scroll-behavior: smooth;
+  }
+	*{box-sizing: border-box;}
+	body{margin: 0;
+		padding: 0;
+		font-family: arial;
+		font-size: 14px;
+		
+	}
+
+
+/* Center the loader */
+#loader {
+ position: absolute;
+ top: 50%;
+ left: 50%;
+  z-index: -1;
+  margin: -75px 0 0 -45px;
+  border: 3px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 3px solid rgba(0, 0, 0, 0.5);
+  width: 80px;
+  height: 80px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+
+
+#myDiv {
+  display: none;
+ }
+
+
+/*Top nav*/
+	.topnav {
+  background-color: rgba(255, 50, 100, 0.5);
+  width: 100%;
+ float: right;
+ transition: 0.8s;
+ padding: 5px;
+ position: relative;
+
+
+}
+/* Top Nav content*/
+.topnav a {
+  float: left;
+  display: block;
+  color:white;
+  text-align: left;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Top nav icon for smaller screens */
+.topnav .icon {
+  display: none;
+}
+
+/* Dropdown class inside the top nav */
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+
+/* Button inside the dropdown class in the topnav */
+
+
+.dropdown .dropbtn {  
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+  cursor: pointer;
+  font-size: inherit;
+}
+.dropdown .dropbtn:hover{font-weight: bold;
+}
+.dropdown .dropbtn:active{font-weight: bold;
+}
+.dropdown:hover .dropdown-content {display: block;}
+/*Content of the dropdown button*/
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.9);
+  min-width: 160px;
+  box-shadow: 0px 0px 8px black;
+  z-index: 1;
+  font-size: 12px;
+  cursor: pointer;
+animation: movedown 0.3s linear forwards;
+  visibility: hidden;
+}
+
+@keyframes movedown{
+  0%{transform: translateY(-15px);
+    visibility: visible;
+  }
+ 100%{transform: translateY(0);
+    visibility: visible;
+  }
+}
+
+
+.dropdown-content a {
+  float: none;
+  color: gray;
+  padding: 8px 10px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+ z-index: -1;
+}
+ 
+
+.topnav:hover{background: rgba(255, 0, 0, 0.5);
+}
+.topnav a:hover, .dropdown:hover .dropbtn {
+  background-color: #555;
+  color: white;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+  color: black;
+}
+/*The class to appear onclick of the dropdown button*/
+.show{
+  display: block;
+}
+@media screen and (max-width: 975px){
+  .dropdown .dropbtn {padding: 14px 6px ;
+  }
+  .topnav a{padding:14px 6px  ;
+  }
+}
+
+@media screen and (max-width: 815px) {
+  .topnav a:not(:first-child), .dropdown .dropbtn {
+    display: none;
+  }
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 815px) 
+
+/* Set a responsive class for smaller screens */
+{
+  .topnav.responsive {position: relative;
+  	width: 100%;
+  }
+
+  /* Allow the icon to show on smaller screens */
+  .topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  /*Content of the topnav in smaller screens*/
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+
+  /*Disable the flaot property in smaller screen to allow its contents stack on each other*/
+
+  .topnav.responsive .dropdown {float: none;}
+
+  .topnav.responsive .dropdown-content {position: relative;
+  	margin-left: 17px;}
+  .topnav.responsive .dropdown .dropbtn {
+    display: block;
+    width: 100%;
+    text-align: left;
+  }
+
+}
+
+
+
+.content {
+  max-width: 500px;
+  margin: auto;
+  background: white;
+  padding: 100px 20px;
+  text-align: center;
+}
+
+
+.content a{text-decoration: none;
+	margin-top: 20px;
+	color: black;
+	display: inline-block;
+	padding: 10px 10px;
+	font-weight: bold;
+
+}
+.content img{padding: 20px;
+}
+</style>
+
+</head>
+
+<body onload="myloader()">
+
+  <div id="loader"></div>
+ 
+<div id="myDiv">
+
+<div class="topnav" id="myTopnav">
+
+  <a href="index.html" style="padding: 0px; margin: -10px -10px;"><img src="C:\Users\Marcus\Documents\Grandeur images\grandeur.png" style="width: 90px; height: 65px;"> </a>
+
+  <div class="dropdown">
+    <button class="dropbtn" onclick="show()"> <img src="C:\Users\Marcus\Documents\Grandeur images\Clothes_16px.png" style="margin-bottom: -3px; margin-right: 2px;">Clothing <img src="C:\Users\Marcus\Documents\Grandeur images\Sort Down_14px.png" style="margin-bottom: -3px;"> 
+    
+    </button>
+    <div class="dropdown-content" id="mydropdown">
+      <a href="Secondpage.html">Dresses and jumpsuits</a>
+      <a href="Next page.html">Shirts</a>
+      <a href="Next page.html">T-shirts and tops</a>
+      <a href="Next page.html">Cardigans and sweaters</a>
+      <a href="Next page.html">Sweatshirts</a>
+      <a href="Next page.html">Coats</a>
+      <a href="Next page.html">Trousers</a>
+      <a href="Next page.html">Jeans</a>
+      <a href="Next page.html">Skirts</a>
+      <a href="Next page.html">Bikini and swimsuits</a>
+      <a href="Next page.html">Sportswear</a>
+      <a href="Next page.html">Underwear and lingerie</a>
+      <a href="Next page.html">Pyjamas</a>
+      <a href="Next page.html">Shirts</a>
+      <a href="Next page.html">T-shirts and tops</a>
+       <a href="Next page.html">Pyjamas</a>
+      <a href="Next page.html">Shirts</a>
+      <a href="Next page.html">T-shirts and tops</a>
+    </div>
+  </div>
+
+  <div class="dropdown">
+    <button class="dropbtn" onclick="show01()"><img src="C:\Users\Marcus\Documents\Grandeur images\Necklace_16px.png" style="margin-bottom: -3px; margin-right: 2px;">Accesories <img src="C:\Users\Marcus\Documents\Grandeur images\Sort Down_14px.png" style="margin-bottom: -3px;"> 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content" id="mydropdown01">
+      <a href="Next page.html">Shoes</a>
+      <a href="Next page.html">Bags</a>
+      <a href="Next page.html">Jewellery</a>
+       <a href="Next page.html">Belts</a>
+      <a href="Next page.html">Sunglasses</a>
+      <a href="Next page.html">Scarves</a>
+       <a href="Next page.html">Hat</a>
+      <a href="Next page.html">Beauty</a>
+      <a href="Next page.html">More accesories</a>
+    </div>
+  </div>
+
+ <a href="#home"><img src="C:\Users\Marcus\Documents\Grandeur images\Underwear_16px.png" style="margin-bottom: -3px; margin-right: 2px;">Plus Sizes </a>
+   <div class="dropdown">
+    <button class="dropbtn" onclick="show03()"><img src="C:\Users\Marcus\Documents\Grandeur images\Trainers_16px.png" style="margin-bottom: -3px; margin-right: 2px;">Collections <img src="C:\Users\Marcus\Documents\Grandeur images\Sort Down_14px.png" style="margin-bottom: -3px;"> 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content" id="mydropdown03">
+      <a href="Next page.html">Party and events</a>
+      <a href="Next page.html">Linen collection <sup>New!</sup></a>
+      <a href="Next page.html">Office looks</a>
+      <a href="Next page.html">Basics</a>
+      <a href="Next page.html">Online Exclusive</a>
+      <a href="Next page.html">Denim</a>
+      <a href="Next page.html">Total look</a>
+      <a href="Next page.html">Sneakers collection</a>
+      <a href="Next page.html">Sport collection</a>
+      <a href="Next page.html">Maternity wear <sup>New!</sup></a>
+    </div>
+  </div> 
+
+
+   <div class="dropdown">
+    <button class="dropbtn" onclick="show04()"><img src="C:\Users\Marcus\Documents\Grandeur images\Star Filled_16px.png" style="margin-bottom: -3px; margin-right: 2px;">Featured <img src="C:\Users\Marcus\Documents\Grandeur images\Sort Down_14px.png" style="margin-bottom: -3px;"> 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content" id="mydropdown04">
+      <a href="Next page.html">Sunset celebration <sup>New!</sup></a>
+      <a href="Next page.html">Denim Shorts Guide  <sup>New!</sup></a>
+      <a href="Next page.html">Key Trends  <sup>New!</sup></a>
+       <a href="Next page.html">Accesories Edition  <sup>New!</sup></a>
+        <a href="Next page.html">Summer getaway</a>
+         <a href="Next page.html">Eseential Prices</a>
+          <a href="Next page.html">Best sellers</a>
+           <a href="Next page.html">Sustainability</a>
+    </div>
+  </div> 
+
+   <div class="dropdown">
+    <button class="dropbtn" onclick="show05()"> <img src="C:\Users\Marcus\Documents\Grandeur images\More_16px.png" style="margin-bottom: -3px; margin-right: 2px;">More <img src="C:\Users\Marcus\Documents\Grandeur images\Sort Down_14px.png" style="margin-bottom: -3px;"> 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content" id="mydropdown05" >
+      <a href="Next page.html"> <img src="C:\Users\Marcus\Documents\Grandeur images\User Male_16px.png" style="margin-bottom: -3px; margin-right: 2px;">Sign in | Create account</a>
+      <a href="Next page.html"> <img src="C:\Users\Marcus\Documents\Grandeur images\Shopping Cart Loaded_16px.png" style="margin-bottom: -3px; margin-right: 2px;">Orders</a>
+      <a href="Next page.html">  <img src="C:\Users\Marcus\Documents\Grandeur images\Like Filled_16px.png" style="margin-bottom: -3px; margin-right: 2px;">Wishlist</a>
+       <a href="Next page.html"> <img src="C:\Users\Marcus\Documents\Grandeur images\Shop_16px.png" style="margin-bottom: -3px; margin-right: 2px;">Store locator</a>
+        <a href="Next page.html"><img src="C:\Users\Marcus\Documents\Grandeur images\Help_16px.png" style="margin-bottom: -3px; margin-right: 2px;">Help</a>
+         <a href="Next page.html"> <img src="C:\Users\Marcus\Documents\Grandeur images\Globe_16px.png" style="margin-bottom: -3px; margin-right: 2px;">Nigeria</a>
+    </div>
+    </div> 
+ 
+   <div class="dropdown">
+    <button class="dropbtn" onclick="show06()"> <img src="C:\Users\Marcus\Documents\Grandeur images\Message_16px.png" style="margin-bottom: -3px; margin-right: 2px;">Contact Us <img src="C:\Users\Marcus\Documents\Grandeur images\Sort Down_14px.png" style="margin-bottom: -3px;"> 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content" id="mydropdown06" >
+     <a href="#home">  <img src="C:\Users\Marcus\Documents\Grandeur images\Facebook_16px.png" style="margin-bottom: -3px; margin-right: 2px;">Facebook</a>
+      <a href="#home"> <img src="C:\Users\Marcus\Documents\Grandeur images\Twitter_16px.png" style="margin-bottom: -3px; margin-right: 2px;">Twitter</a>
+       <a href="#home"> <img src="C:\Users\Marcus\Documents\Grandeur images\Instagram_16px.png" style="margin-bottom: -3px; margin-right: 2px;">Instagram</a>
+        <a href="#home">  <img src="C:\Users\Marcus\Documents\Grandeur images\Snapchat_16px.png" style="margin-bottom: -3px; margin-right: 2px;">Snapchat</a>
+         <a href="#home">  <img src="C:\Users\Marcus\Documents\Grandeur images\Office Phone_16px.png" style="margin-bottom: -3px; margin-right: 2px;">Tel</a>
+          <a href="#home"> <img src="C:\Users\Marcus\Documents\Grandeur images\Email_16px.png" style="margin-bottom: -3px; margin-right: 2px;">Email</a>
+    </div>
+  </div> 
+ 
+
+
+  <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+</div>
+
+
+<div class="content">
+	<img src="C:\Users\Marcus\Documents\Grandeur images\Error_25px.png">
+	<h2>We encountered  a fault loading the items</h2>
+	<p>We are working so you get inspired again as soon as possible.</p>
+	<p>Check back later</p>
+
+	
+	<hr style="margin-top: 30%">
+
+<a href="#">Help</a>
+<a href="#">Contact</a>
+<a href="#">Register</a>
+<a href="#">Shops</a> <br>
+<a href="#">Work for D'GRANDEUR</a>
+<a href="#">Site Map</a> <br>
+<a href="#">Sustainability</a> <br>
+
+<img src="C:\Users\Marcus\Documents\Grandeur images\Facebook black_25px.png">
+<img src="C:\Users\Marcus\Documents\Grandeur images\Twitterblack_25px.png">
+<img src="C:\Users\Marcus\Documents\Grandeur images\Instagram_25px.png">
+<img src="C:\Users\Marcus\Documents\Grandeur images\Pinterestblack_25px.png">
+<img src="C:\Users\Marcus\Documents\Grandeur images\YouTube 2_25px.png">
+
+<p> &copy 2022 D'GRANDEUR All rights reserved</p>
+<img src="C:\Users\Marcus\Documents\Grandeur images\grandeur.png" style="width: 150px;"> 
+
+</div>
+</div>
+
+
+
+
+	
+	<script type="text/javascript">
+//The loader  
+var myVar;
+
+function myloader() {
+  myVar = setTimeout(showPage, 300);
+}
+
+function showPage() {
+  document.getElementById("loader").style.display = "none";
+  document.getElementById("myDiv").style.display = "block";
+}
+
+
+
+//Activate the responsive class
+ function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
+
+// When the user clicks on the button, toggle between hiding and showing the dropdown content
+function show() {
+  document.getElementById("mydropdown").classList.toggle("show");
+ 
+
+
+}
+</script>
+
+</body>
+</html>
