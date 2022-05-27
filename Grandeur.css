@@ -132,7 +132,7 @@ animation: movedown 0.3s linear forwards;
 
 .dropdown-content a {
   float: none;
-  color: gray;
+  color: black;
   padding: 8px 10px;
   text-decoration: none;
   display: block;
