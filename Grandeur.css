@@ -212,7 +212,7 @@ animation: movedown 0.3s linear forwards;
 
 
 .flip-box-front {
-  background-color: rgba(255, 50, 120, 0.4);
+  background-color: rgba(255, 50, 120, 0.3);
   color: whitesmoke;
   border-radius: 5px;
   font-family: 'Fjalla One', sans-serif;
