@@ -141,7 +141,7 @@ animation: movedown 0.3s linear forwards;
 }
  
 
-.topnav:hover{background: rgba(255, 0, 0, 0.5);
+.topnav:hover{background: rgba(255, 50, 120, 0.9);
 }
 .topnav a:hover, .dropdown:hover .dropbtn {
   background-color: #555;
@@ -237,9 +237,6 @@ animation: movedown 0.3s linear forwards;
   }
   .topnav a{padding:14px 6px  ;
   }
-  .dropdown-content a {padding: 6px 6px;
-  }
-
 }
 
 @media screen and (max-width: 815px) {
@@ -272,7 +269,6 @@ animation: movedown 0.3s linear forwards;
     float: none;
     display: block;
     text-align: left;
-    padding: 6px;
   }
 
   /*Disable the flaot property in smaller screen to allow its contents stack on each other*/
