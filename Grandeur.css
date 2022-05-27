@@ -288,7 +288,8 @@ animation: movedown 0.4s linear forwards;
   .topnav.responsive .dropdown {float: none;}
 
   .topnav.responsive .dropdown-content {position: relative;
-  	margin-left: 17px;}
+  	margin-left: 17px;
+	padding: 6px;}
   .topnav.responsive .dropdown .dropbtn {
     display: block;
     width: 100%;
